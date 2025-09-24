@@ -8,7 +8,7 @@ public class FilteringServiceImpl implements FilteringService {
     public List<String> Filter(List<String> list) {
         // Filtering with first char
         List<String> result = list.stream()
-                .filter(s -> !s.isEmpty() && s.charAt(0) == 'M')
+                .filter(s -> !s.isEmpty() && Character.toUpperCase(s.charAt(0)) == 'M')
                 .collect(Collectors.toList());
 
         return result;
