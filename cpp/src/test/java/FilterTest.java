@@ -1,16 +1,17 @@
 package src.test.java;
 
-/*import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;
 import src.main.java.services.FilteringService;
 import src.main.java.services.FilteringServiceImpl;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Predicate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static src.main.java.utils.FilteringUtils.isPrime;
+import src.main.java.utils.Printer;
 
-public class FilterTest {
+class FilterTest {
 
     private final FilteringService service = new FilteringServiceImpl();
 
@@ -22,6 +23,7 @@ public class FilterTest {
         List<String> result = service.Filter(input);
 
         assertEquals(expected, result);
+        Printer.success("testFilterStringsStartingWithM" + result);
     }
 
     @Test
@@ -32,6 +34,7 @@ public class FilterTest {
         List<String> result = service.Filter(input);
 
         assertEquals(expected, result);
+        Printer.success("testFilterWithEmptyStrings" + result);
     }
 
     @Test
@@ -42,23 +45,15 @@ public class FilterTest {
         List<String> result = service.Filter(input);
 
         assertEquals(expected, result);
+        Printer.success("testFilterWhenNoMatches" + result);
     }
 
     @Test
     void testFilterPrimesFromIntegerList() {
         List<Integer> input = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11);
         List<Integer> expected = Arrays.asList(2, 3, 5, 7, 11);
-
-        Predicate<Integer> isPrime = n -> {
-            if (n < 2) return false;
-            for (int i = 2; i <= Math.sqrt(n); i++) {
-                if (n % i == 0) return false;
-            }
-            return true;
-        };
-
         List<Integer> result = service.Filter(input, isPrime);
-
         assertEquals(expected, result);
+        Printer.success("testFilterPrimesFromIntegerList" + result);
     }
-}*/
+}
